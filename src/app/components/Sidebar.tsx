@@ -10,19 +10,19 @@ const sidebarMenuItems = [
   {
     name: "Dashboard",
     description: "Manage your things",
-    path: "/dashboard/main",
+    path: "/main",
     icon: <LuLayoutDashboard size={30} />,
   },
   {
     name: "Counter",
     description: "Local state",
-    path: "/dashboard/counter",
+    path: "/counter",
     icon: <IoIosAddCircle size={30} />,
   },
   {
     name: "Pokemons",
     description: "Static Pokemon List",
-    path: "/dashboard/pokemons",
+    path: "/pokemons",
     icon: <CgPokemon size={30} />,
   },
 ];

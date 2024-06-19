@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { SimplePokemon } from "@/app/dashboard/pokemons/interfaces/simple-pokemon";
+import { SimplePokemon } from "../(features)/pokemons/interfaces";
 import Link from "next/link";
 import { CiHeart } from "react-icons/ci";
 

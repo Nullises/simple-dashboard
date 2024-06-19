@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Pokemons, SimplePokemon } from "./interfaces";
-import PokemonItem from "@/app/components/pokemons/PokemonItem";
+import PokemonItem from "@/app/components/PokemonItem";
 
 const getPokemons = async (
   limit = 20,
