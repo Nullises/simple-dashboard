@@ -1,5 +1,8 @@
 "use client";
+import { initCounterState } from "@/lib/counter/counterSlice";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 interface SidebarMenuItem {
   name: string;

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { SimplePokemon } from "../(features)/pokemons/interfaces";
+import { SimplePokemon } from "../dashboard/pokemons/interfaces";
 import Link from "next/link";
 import { CiHeart } from "react-icons/ci";
 
@@ -26,18 +26,16 @@ const PokemonItem = ({ name, url, id }: SimplePokemon) => {
         </div>
         <div className="relative text-white px-6 pb-6 mt-6">
           <span className="block opacity-75 -mb-1 text-black"></span>
-          <div className="flex justify-between">
+          <div className="flex justify-between items-center">
             <span className="block font-semibold text-xl text-black capitalize">
               {name}
             </span>
-            <span className="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center"></span>
+            <Link href={`/dashboard/pokemons/${name}`}>
+              <span className="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">
+                See more
+              </span>
+            </Link>
           </div>
-          <button
-            onClick={() => {}}
-            className="flex p-2 mt-2 items-center justify-center rounded-xl bg-gray-900 text-white hover:bg-gray-600 transition-all w-full"
-          >
-            More information
-          </button>
         </div>
       </div>
     </>

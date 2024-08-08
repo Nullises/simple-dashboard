@@ -22,18 +22,18 @@ const getPokemons = async (
   } catch (error) {}
 };
 
-export default async function PokemonPage() {
+export default async function PokemonsPage() {
   const pokemons = await getPokemons(151);
 
   return (
     <div className="flex flex-col">
-      <span className="text-5xl my-2">
-        <small>static</small> Pokemon List
-      </span>
+      <span className="text-5xl my-2">Pokemon List</span>
+      <small>static</small>
       <div className="flex flex-wrap gap-10 items-center justify-center">
         {pokemons &&
-          pokemons.map((pokemon) => (
+          pokemons.map((pokemon, key) => (
             <PokemonItem
+              key={key}
               id={pokemon.id}
               name={pokemon.name}
               url={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
