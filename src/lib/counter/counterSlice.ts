@@ -6,7 +6,7 @@ interface CounterState {
 }
 
 const initialState: CounterState = {
-  count: 0,
+  count: 5,
   isReady: false,
 };
 
@@ -15,25 +15,31 @@ const counterSlice = createSlice({
   initialState,
   reducers: {
     initCounterState(state, action: PayloadAction<number>) {
-      if (state.isReady) return;
+      // if (state.isReady) return;
+
       state.count = action.payload;
       state.isReady = true;
     },
-    addOne(state, action: PayloadAction<number>) {
-      const incrementBy = action.payload !== undefined ? action.payload : 1;
-      state.count += incrementBy;
+
+    addOne(state) {
+      state.count++;
     },
-    substractOne(state, action: PayloadAction<number>) {
-      const decrementBy = action.payload !== undefined ? action.payload : 1;
-      state.count -= decrementBy;
+
+    substractOne(state) {
+      if (state.count === 0) return;
+
+      state.count--;
     },
-    resetCounter(state) {
-      state.count = 0;
+
+    resetCount(state, action: PayloadAction<number>) {
+      if (action.payload < 0) action.payload = 0;
+
+      state.count = action.payload;
     },
   },
 });
 
-export const { substractOne, addOne, resetCounter, initCounterState } =
+export const { addOne, substractOne, resetCount, initCounterState } =
   counterSlice.actions;
 
 export default counterSlice.reducer;
